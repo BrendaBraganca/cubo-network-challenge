@@ -1,6 +1,7 @@
 package com.example.cubo_challenge.repository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,6 +33,17 @@ public class ClientRepositoryTests {
         Assertions.assertNotNull(savedClient);
         Assertions.assertEquals(savedClient, client);
         Assertions.assertNotNull(savedClient.getId());
+    }
+
+    @Test
+    public void findAllClients(){
+        Client savedClient = clientRepository.save(client);
+        Client savedClient2 = clientRepository.save(client);
+
+        List<Client> allClients = clientRepository.findAll();
+
+        Assertions.assertNotNull(allClients);
+        Assertions.assertEquals(allClients.get(0), savedClient);
     }
 
 }
