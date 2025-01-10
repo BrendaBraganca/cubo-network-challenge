@@ -24,8 +24,7 @@ public class Client {
     private String lastName;
     private BigDecimal participation;
 
-    public Client(Long id, String firstName, String lastName, BigDecimal participation){
-        this.id = id;
+    public Client( String firstName, String lastName, BigDecimal participation){
         this.firstName = firstName;
         this.lastName = lastName;
         this.participation = participation;
