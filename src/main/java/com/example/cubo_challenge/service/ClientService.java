@@ -1,0 +1,31 @@
+package com.example.cubo_challenge.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.cubo_challenge.entity.Client;
+import com.example.cubo_challenge.entity.dto.ClientDTO;
+import com.example.cubo_challenge.repository.ClientRepository;
+
+@Service
+public class ClientService {
+    @Autowired
+    private ClientRepository clientRepository;
+
+    public Client saveClient(ClientDTO clientDTO){
+        Client client = new Client();
+
+        client.setFirstName(clientDTO.firstName());
+        client.setLastName(clientDTO.lastName());
+        client.setParticipation(clientDTO.participation());
+
+        return clientRepository.save(client);
+    }
+
+    public List<Client> listAllClients(){
+        return clientRepository.findAll();
+    }
+
+}
