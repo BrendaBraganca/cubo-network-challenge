@@ -1,6 +1,6 @@
 CREATE TABLE clients(
     id SERIAL,
-    firstName TEXT NOT NULL,
-    lastName TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
     participation DECIMAL NOT NULL
 )
